@@ -140,7 +140,7 @@
     ;; and/or, with short-circuiting semantics
     [`(and ,e0) (ifarith->ifarith-tiny e0)]
     [`(and ,e0 ,es ...) (ifarith->ifarith-tiny `(if ,e0 (and ,@es) 0))]
-[`(or ,e0) (ifarith->ifarith-tiny e0)]
+    [`(or ,e0) (ifarith->ifarith-tiny e0)]
     [`(or ,e0 ,es ...) (ifarith->ifarith-tiny `(if ,e0 true (or ,es)))]
     ;; if argument is 0, false, otherwise true
     [`(if ,e0 ,e1 ,e2) `(if ,(ifarith->ifarith-tiny e0)
